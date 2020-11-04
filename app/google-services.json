@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "109943825057",
+    "firebase_url": "https://emaildemo-7fee1.firebaseio.com",
+    "project_id": "emaildemo-7fee1",
+    "storage_bucket": "emaildemo-7fee1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109943825057:android:bcc677d27812c47bfa86e0",
+        "android_client_info": {
+          "package_name": "com.example.emailfirebaseapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109943825057-7oq4eeiiv2dj7ru8l5kot5709b0ouilr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArAqteRFaUEQZuZlyNTo6a4Bwf26Cjh3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109943825057-7oq4eeiiv2dj7ru8l5kot5709b0ouilr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
