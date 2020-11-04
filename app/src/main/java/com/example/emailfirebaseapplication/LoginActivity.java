@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;
+    private ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
     @Override
@@ -36,6 +38,9 @@ public class LoginActivity extends AppCompatActivity {
 
         inputEmail = (EditText) findViewById(R.id.editTextTextEmailAddress);
         inputPassword = (EditText) findViewById(R.id.editTextTextPassword);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
+
+        progressBar.setVisibility(View.GONE);
     }
 
     public void loginUser(View view) {
@@ -46,11 +51,11 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "All Fields Required!", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-
+                progressBar.setVisibility(View.GONE);
                 if (!task.isSuccessful()) {
 
                         Toast.makeText(LoginActivity.this, "User Name or Password Incorrect!!", Toast.LENGTH_LONG).show();

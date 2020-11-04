@@ -1,15 +1,16 @@
 package com.example.emailfirebaseapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,11 +21,10 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     private EditText inputEmail, inputPassword;
-
+    private ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
-    private String userId;
-    private String email;
+
 
 
 
@@ -43,6 +43,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         inputEmail = (EditText)findViewById(R.id.editTextTextEmailAddress);
         inputPassword = (EditText)findViewById(R.id.editTextTextPassword);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        progressBar.setVisibility(View.GONE);
 
 
 
@@ -68,12 +71,13 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(emailInput,password)
                 .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
+                        progressBar.setVisibility(View.GONE);
                         if (!task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Authentication failed." + task.getException(),Toast.LENGTH_LONG).show();
                             Log.e("MyTag", task.getException().toString());

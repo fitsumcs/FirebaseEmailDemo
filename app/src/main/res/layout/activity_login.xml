@@ -10,42 +10,48 @@
     <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="240dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="89dp"
-        android:layout_marginBottom="38dp"
+        android:layout_height="46dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/tx_email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="89dp" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="239dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="60dp"
+        android:layout_height="46dp"
         android:ems="10"
         android:hint="@string/tx_password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="173dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="239dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="278dp"
+        android:layout_height="46dp"
         android:onClick="loginUser"
         android:text="@string/button_login"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="279dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="198dp"
+        android:layout_marginBottom="182dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
